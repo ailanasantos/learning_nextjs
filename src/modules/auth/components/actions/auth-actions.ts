@@ -7,6 +7,7 @@ const prisma = new PrismaClient();
 async function createAccont(formData: FormData) {
     'user server';
 
+    try {
     const name = formData.get('name') as string;
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
@@ -22,15 +23,14 @@ async function createAccont(formData: FormData) {
     });
 
     redirect('/portal/login');
-
     alert('Conta criada com sucesso')
-}
-try {
-}catch(e){
+
+
+}catch (e) {
     console.error(e);
     alert('Erro ao criar conta');
     
 
 }
 
-
+}
