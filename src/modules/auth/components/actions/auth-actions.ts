@@ -22,8 +22,10 @@ async function createAccont(formData: FormData) {
         }
     });
 
-    redirect('/portal/login');
+
     alert('Conta criada com sucesso')
+    redirect('/portal/login');
+    
 
 
 }catch (e) {
@@ -34,3 +36,9 @@ async function createAccont(formData: FormData) {
 }
 
 }
+
+const authActions = {
+    createAccont
+};
+
+export default authActions;
